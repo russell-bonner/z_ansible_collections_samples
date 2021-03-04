@@ -3,6 +3,7 @@
 source_system:
   hosts:
     zos_host:
-      ansible_host: zos_target_address
-      ansible_user: zos_target_username
-      ansible_python_interpreter: path_to_python_interpreter_binary_on_zos_target
+      ansible_host: winmvs51.hursley.ibm.com
+      ansible_user: bonnerr
+      ansible_python_interpreter: /usr/lpp/IBM/cyp/v3r8/pyz/bin/python3.8
+    

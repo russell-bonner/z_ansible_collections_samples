@@ -11,6 +11,15 @@
   gather_facts: 'false'
 
   tasks:
+  #  - name: showenvironment
+  #    environment: 
+  #      _BPXK_AUTOCVT: "ON"
+  #    shell: set
+  #    register: result
+  #  - name: debug
+  #    debug: 
+  #      msg: "{{ result }}"
+
     ############################################################################
     # Copy load module to load library
     ############################################################################

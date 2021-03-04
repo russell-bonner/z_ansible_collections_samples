@@ -1,0 +1,37 @@
+---
+- name:  CICS CMCI Report
+
+  collections:
+      - ibm.ibm_zos_cics
+
+  hosts: 'localhost'
+  gather_facts: 'false'
+
+  vars:
+    program_name: MYPROG
+    context: CICSPLEX
+    cmci_host: 'example.com'
+    cmci_port: 12345
+
+  tasks:
+    - name: Make sure CMCI module dependencies are installed
+      pip:
+        name:
+          - requests
+          - xmltodict
+
+    - name: Find all instances of a particular program
+      cmci_get:
+        context: '{{ context }}'
+        cmci_host: '{{ cmci_host }}'
+        cmci_port: '{{ cmci_port }}'
+        type: 'CICSProgram'
+        scheme: 'http'
+        resources:
+          filter:
+            program: '{{ program_name }}'
+      register: result
+
+    - name: Extract the CICS region names from the program records
+      debug:
+        msg: "{{ result.records | map(attribute='eyu_cicsname') | join(',') }}"

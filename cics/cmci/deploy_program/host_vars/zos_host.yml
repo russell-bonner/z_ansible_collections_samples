@@ -23,28 +23,28 @@ PYZ: "/usr/lpp/IBM/cyp/v3r8/pyz"
 ZOAU: "/usr/lpp/IBM/zoautil"
 
 # Target CMCI hostname
-cmci_host: example.com
+cmci_host: winmvs51.hursley.ibm.com
 
 # Target CMCI port
-cmci_port: 12345
+cmci_port: 61492
 
 # CMCI scheme (http or https)
-scheme: https
+scheme: http
 
 # Target CICSplex SM context
-context: MYPLEX
+context: IYEMZC2A
 
 # Target CICSplex SM scope (probably the target region name)
-scope: MYRGN
+scope: 
 
 # Name of the target program
-program: PRG1
+program: LGICUS01
 
 # Name of the dataset containing the build output load module
-build_ds: BLD.OUTPUT
+build_ds: BONNERR.APPL.GENAPP.BASE.LOADLIB
 
 # Name of the destination load library for the load module
-load_lib: CICS.LLIB
+load_lib: BONNERR.APPL.GENAPP.TEST.LOADLIB
 
 # CMCI user name (leave blank for unauthenticated)
 cmci_user:
